@@ -1,0 +1,23 @@
+class Solution 
+{                           //분자        모           자        모
+    public int[] solution(int denum1, int num1, int denum2, int num2) 
+    {
+        int[] answer = {1, 1};
+        int k = 1;
+        int sumdenum = num1*denum2+num2*denum1;  // 분자 
+//        System.out.println(sumnum);
+        int sumnum = num1*num2;    // 분모  
+//        System.out.println(sumdenum);
+        
+          for(int i = 1; i<1000; i++)
+          { 
+            if(sumnum%i == 0 && sumdenum%i == 0)
+                k *= i;  // k는 분자 분모를 나눌 수 있는 최대  
+          }
+//         System.out.println(k);
+        answer[0] = sumdenum/k;
+        answer[1] = sumnum/k;
+        
+        return answer;
+    }
+}
